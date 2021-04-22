@@ -6,21 +6,43 @@ public class IceCream {
 	
 	Scanner sc = new Scanner(System.in);
 	int num;
-	
+	String[] name;
+	int[] price;
 	
 	IceCream(){
-		System.out.println("¾ÆÀÌ½ºÅ©¸² ¸î°³ ±¸ÀÔÇÒ·¡?");
-		int num = sc.nextInt();
+		System.out.print("ì•„ì´ìŠ¤í¬ë¦¼ ëª‡ê°œ êµ¬ì…í• ë˜? ");
+		num = sc.nextInt();
+		sc.nextLine();
+		
+		this.name =new String[num];
+		this.price = new int[num];
 	}
 
-	void getIce() {
-		for(int i=1; i<= num; i++) {
-			System.out.println("*** " + i + "¹øÂ° ¾ÆÀÌ½ºÅ©¸² ±¸¸ÅÁ¤º¸ ÀÔ·Â ***");
-			System.out.print("¾ÆÀÌ½ºÅ©¸²¸í : ");
+	
+	void inputIce() {
+		
+		for(int i=0; i<num; i++) {
+		
+			System.out.println("*** " +(i+1)+"ë²ˆì§¸ ì•„ì´ìŠ¤í¬ë¦¼ êµ¬ë§¤ì •ë³´ ì…ë ¥ ***");
+			
+			System.out.print("ì•„ì´ìŠ¤í¬ë¦¼ëª… : ");
+			name[i] = sc.nextLine();
+			
+			System.out.print("ì•„ì´ìŠ¤í¬ë¦¼ ê°€ê²© : ");
+			price[i] = sc.nextInt();
+			sc.nextLine();
+			
+			
 		}
 		
 	}
 	
-	
+	void print() {
+		System.out.println("< "+ num +"ê°œì˜ ì•„ì´ìŠ¤í¬ë¦¼ êµ¬ë§¤ì •ë³´ ì¶œë ¥ >");
+		System.out.println("ë²ˆí˜¸   ì•„ì´ìŠ¤í¬ë¦¼ëª…   ì•„ì´ìŠ¤í¬ë¦¼ê°€ê²©");
+		for(int i=0; i<num; i++) {
+			System.out.println((1+i) + "      " + name[i]+"      "+price[i]);
+		}
+	}
 
 }
